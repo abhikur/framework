@@ -1,3 +1,4 @@
+require('./commands.js');
 var webdriver = require('selenium-webdriver'),
     By = require('selenium-webdriver').By,
     chrome = require('selenium-webdriver/chrome'),
@@ -7,9 +8,35 @@ var driver = new webdriver.Builder()
     .forBrowser('chrome')
     .build();
 
-var file = require('./commands.js');
-console.log(file);
+counter = 1;
+function openPage(url){
+	driver.get(url).then(function(){counter++})
+}
 
-file.commands.forEach(function(command){
-	driver[command]()
+function clickAt(){
+
+}
+
+function setText() {
+
+}
+
+function waitTill() {
+
+}
+
+var functions = {get:openPage,click:clickAt,sendKeys:setText,wait:waitTill};
+
+commandsToAutobot.forEach(function(task){
+	functions[task.command](task.value);
+})
+
+driver.quit();
+
+
+
+process.on('uncaughtException',function(err){
+	console.log("Error in "+counter+" command");
+	process.exitCode = counter;
+	driver.quit();
 })
