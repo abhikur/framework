@@ -1,0 +1,19 @@
+{
+  "name": "selenium-framework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "commands.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abhikur/framework.git"
+  },
+  "author": "Abhikur",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abhikur/framework/issues"
+  },
+  "homepage": "https://github.com/abhikur/framework#readme"
+}
